@@ -1,0 +1,16 @@
+services:
+  ros:
+    build: .
+    volumes:
+      - /mnt/wslg/.X11-unix:/tmp/.X11-unix
+      - /mnt/wslg:/mnt/wslg
+      - "$HOME/.Xauthority:/root/.Xauthority:rw"
+    environment:
+      - DISPLAY=:0
+      - WAYLAND_DISPLAY=wayland-0
+      - XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir
+      - PULSE_SERVER=unix:/mnt/wslg/PulseServer
+    network_mode: "host"
+    stdin_open: true
+    tty: true
+
