@@ -1,6 +1,7 @@
 services:
   ros:
     build: .
+    # image: osrf/ros:noetic-desktop-full
     volumes:
       - /mnt/wslg/.X11-unix:/tmp/.X11-unix
       - /mnt/wslg:/mnt/wslg
